@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EARS Spec</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-tab="form">
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <strong data-i18n="appTitle">EARS Spec</strong>
+      <span class="tagline" data-i18n="tagline"></span>
+    </div>
+    <div class="actions">
+      <div class="seg" role="group" data-i18n-aria="language">
+        <button type="button" data-action="lang" data-lang="es">ES</button>
+        <button type="button" data-action="lang" data-lang="en">EN</button>
+      </div>
+      <button type="button" class="btn ghost" data-action="example" data-i18n="loadExample"></button>
+      <button type="button" class="btn ghost" data-action="clear" data-i18n="clear"></button>
+      <button type="button" class="btn" data-action="download" data-i18n="download"></button>
+      <button type="button" class="btn primary" data-action="copy" data-i18n="copy"></button>
+    </div>
+  </header>
+
+  <div id="notice" class="notice" role="status" hidden></div>
+
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" data-action="tab" data-tab="form" data-i18n="tabForm"></button>
+    <button type="button" role="tab" data-action="tab" data-tab="preview" data-i18n="tabPreview"></button>
+  </nav>
+
+  <main class="layout">
+    <section id="form-pane" class="pane form-pane">
+
+      <details class="section" open>
+        <summary><span data-i18n="secMeta"></span><span class="count" data-count="meta"></span></summary>
+        <div class="section-body fields">
+          <label class="field span-2"><span data-i18n="title"></span><input type="text" data-bind="meta.title"></label>
+          <label class="field"><span data-i18n="author"></span><input type="text" data-bind="meta.author"></label>
+          <label class="field"><span data-i18n="date"></span><input type="date" data-bind="meta.date"></label>
+          <label class="field"><span data-i18n="status"></span><select data-bind="meta.status" data-options="specStatus"></select></label>
+          <label class="field"><span data-i18n="defaultSystem"></span><input type="text" data-bind="meta.defaultSystem" data-i18n-ph="defaultSystemPh"></label>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secProblem"></span><span class="count" data-count="problem"></span></summary>
+        <div class="section-body fields one">
+          <label class="field"><span data-i18n="statement"></span><textarea rows="3" data-bind="problem.statement" data-i18n-ph="phStatement"></textarea></label>
+          <label class="field"><span data-i18n="users"></span><textarea rows="2" data-bind="problem.users" data-i18n-ph="phUsers"></textarea></label>
+          <label class="field"><span data-i18n="whyNow"></span><textarea rows="2" data-bind="problem.whyNow" data-i18n-ph="phWhyNow"></textarea></label>
+          <label class="field"><span data-i18n="context"></span><textarea rows="2" data-bind="problem.context" data-i18n-ph="phContext"></textarea></label>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secReq"></span><span class="count" data-count="requirements"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintReq"></p>
+          <div class="list" data-container="requirements"></div>
+          <button type="button" class="btn small" data-action="add" data-list="requirements">+ <span data-i18n="addReq"></span></button>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secAc"></span><span class="count" data-count="acceptance"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintAc"></p>
+          <div class="list" data-container="acceptance"></div>
+          <button type="button" class="btn small" data-action="add" data-list="acceptance">+ <span data-i18n="addAc"></span></button>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secEdge"></span><span class="count" data-count="edgeCases"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintEdge"></p>
+          <div class="list" data-container="edgeCases"></div>
+          <button type="button" class="btn small" data-action="add" data-list="edgeCases">+ <span data-i18n="addEdge"></span></button>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secNonGoals"></span><span class="count" data-count="nonGoals"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintNonGoals"></p>
+          <div class="list" data-container="nonGoals"></div>
+          <button type="button" class="btn small" data-action="add" data-list="nonGoals">+ <span data-i18n="addNonGoal"></span></button>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secVerif"></span><span class="count" data-count="verification"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintVerif"></p>
+          <div class="list" data-container="verification"></div>
+          <button type="button" class="btn small" data-action="add" data-list="verification">+ <span data-i18n="addVerif"></span></button>
+        </div>
+      </details>
+
+      <details class="section" open>
+        <summary><span data-i18n="secAdr"></span><span class="count" data-count="adrs"></span></summary>
+        <div class="section-body">
+          <p class="hint" data-i18n="hintAdr"></p>
+          <div class="list" data-container="adrs"></div>
+          <button type="button" class="btn small" data-action="add" data-list="adrs">+ <span data-i18n="addAdr"></span></button>
+        </div>
+      </details>
+
+    </section>
+
+    <section id="preview-pane" class="pane preview-pane">
+      <div class="preview-bar">
+        <div class="seg" role="group">
+          <button type="button" data-action="view" data-view="raw" data-i18n="viewRaw"></button>
+          <button type="button" data-action="view" data-view="rendered" data-i18n="viewRendered"></button>
+        </div>
+      </div>
+      <pre id="md-raw" class="md-raw"></pre>
+      <div id="md-rendered" class="md-rendered" hidden></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

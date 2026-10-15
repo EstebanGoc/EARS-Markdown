@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EARS Spec Tests</title>
+  <style>
+    :root { --bg: #fff; --text: #1d1d1b; --pass: #1a7f37; --fail: #b42318; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #121212; --text: #ecece8; --pass: #5bd27a; --fail: #ff8a7a; } }
+    body { background: var(--bg); color: var(--text); font: 14px/1.5 system-ui, sans-serif; margin: 0; padding: 24px 16px; max-width: 760px; margin-inline: auto; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 4px 0; }
+    .pass { color: var(--pass); }
+    .fail { color: var(--fail); }
+    .summary { font-size: 18px; font-weight: 600; }
+    pre { white-space: pre-wrap; font-size: 12px; margin: 4px 0 0 18px; }
+  </style>
+</head>
+<body>
+  <h1>EARS Spec: tests del núcleo</h1>
+  <div id="results"></div>
+  <script src="app.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
